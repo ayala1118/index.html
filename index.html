@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ayala World — Аяла</title>
+  <meta name="description" content="Аяланың жеке сайты — ALT университетінің 1-курс студенті. IT энергетика, жобалар және байланыс.">
+  <style>
+    :root{
+      --accent:#9b5de5;
+      --accent-2:#6b21a8;
+      --card:#0f0520cc;
+      --text:#f3ecff;
+      --muted:#d9cfe9;
+      --maxw:980px;
+      --radius:14px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+      color:var(--text);
+      display:flex;
+      justify-content:center;
+      padding:28px 16px;
+      background: radial-gradient(ellipse at 10% 10%, rgba(155,93,229,0.18) 0%, transparent 10%),
+                  radial-gradient(ellipse at 90% 90%, rgba(107,33,168,0.12) 0%, transparent 10%),
+                  linear-gradient(180deg, #04021a 0%, #0b0622 60%, #10072a 100%);
+      min-height:100vh;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    /* stars */
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      background-image: radial-gradient(white 1px, transparent 1px);
+      background-size: 3px 3px;
+      opacity:0.06;
+      pointer-events:none;
+      mix-blend-mode:screen;
+      transform:translateZ(0);
+    }
+
+    .page{
+      width:100%;
+      max-width:var(--maxw);
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+      border-radius:18px;
+      box-shadow: 0 12px 40px rgba(11,6,34,0.6);
+      overflow:hidden;
+      display:grid;
+      grid-template-columns: 1fr 360px;
+      gap:20px;
+      border:1px solid rgba(255,255,255,0.04);
+    }
+
+    /* Left column */
+    .main{ padding:34px; }
+    .brand h1{ margin:0; font-size:24px; color:var(--accent); }
+    .brand p{ margin:6px 0 0; color:var(--muted); }
+
+    .hero{
+      margin-top:18px;
+      padding:18px;
+      border-radius:12px;
+      background: linear-gradient(180deg, rgba(155,93,229,0.06), rgba(107,33,168,0.02));
+      display:flex;
+      gap:18px;
+      align-items:center;
+      color:var(--text);
+    }
+    .hello h2{ margin:0 0 6px; color:#f7ecff; font-size:20px; }
+    .muted{ color:var(--muted); }
+
+    .section{ margin-top:18px; }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:12px;
+      padding:16px;
+      box-shadow: 0 6px 18px rgba(16,7,42,0.35);
+      border:1px solid rgba(155,93,229,0.06);
+      color:var(--muted);
+    }
+    h3{ margin:0 0 10px; color:var(--accent); font-size:16px }
+
+    ul.info{ list-style:none; padding:0; margin:0; color:var(--muted); font-size:14px }
+    ul.info li{ padding:6px 0; border-bottom:1px dashed rgba(155,93,229,0.03) }
+
+    /* Right column */
+    aside{ padding:22px; background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00)); }
+    .avatar-wrap{ display:flex; justify-content:center; margin-bottom:14px; }
+    .avatar{
+      width:220px; height:220px; border-radius:18px;
+      background: linear-gradient(135deg, var(--accent-2), var(--accent));
+      display:flex; align-items:center; justify-content:center;
+      box-shadow:0 10px 30px rgba(107,33,168,0.18);
+      color:white;
+    }
+
+    .chip{
+      display:inline-block; padding:8px 12px; border-radius:999px;
+      background:rgba(155,93,229,0.12); color:var(--accent); font-weight:700; text-decoration:none;
+    }
+
+    form{ display:flex; flex-direction:column; gap:10px; margin-top:12px; }
+    input, textarea{ padding:10px; border-radius:8px; border:1px solid rgba(255,255,255,0.04); background:rgba(255,255,255,0.02); color:var(--text) }
+    button.btn-send{ background:var(--accent); color:white; border:none; padding:10px 14px; border-radius:10px; cursor:pointer; font-weight:700; }
+
+    footer.page-footer{ grid-column:1 / -1; padding:18px 34px; color:var(--muted); font-size:13px; border-top:1px solid rgba(255,255,255,0.02); display:flex; justify-content:space-between; align-items:center; }
+
+    @media (max-width:920px){
+      .page{ grid-template-columns: 1fr; }
+      aside{ order:2; }
+      .avatar{ width:160px; height:160px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page" role="main" aria-label="Ayala World — сайтын беті">
+    <div class="main">
+      <header class="brand">
+        <h1>Ayala World</h1>
+        <p class="muted">Аяла • ALT университеті • 1 курс</p>
+      </header>
+
+      <div class="hero card" aria-hidden="false">
+        <div style="flex:1">
+          <div class="hello">
+            <h2>Сәлем! Мен Аяла 💜</h2>
+            <p class="muted">Мен IT энергетика мамандығы бойынша 1-курс студентімін. Веб-жасау мен техниканы жақсы көремін.</p>
+          </div>
+        </div>
+      </div>
+
+      <section class="section card" id="about">
+        <h3>Мен туралы</h3>
+        <p class="muted">
+          Университет: <strong>ALT</strong><br>
+          Мамандығы: <strong>IT энергетика</strong><br>
+          Курс: <strong>1 курс</strong><br>
+          Қызығушылық: <strong>IT</strong>
+        </p>
+        <hr style="border:none;border-top:1px solid rgba(255,255,255,0.02);margin:12px 0">
+        <h3>Қысқа жоспарлар</h3>
+        <ul class="info" aria-label="жоспарлар">
+          <li>Веб-әзірлеуді терең меңгеру</li>
+          <li>Жобалар арқылы тәжірибе жинау</li>
+          <li>Командада жұмыс тәжірибесін арттыру</li>
+        </ul>
+      </section>
+
+      <section class="section card" id="projects">
+        <h3>Жобалар (болашақ)</h3>
+        <p class="muted">Бұл бөлімге болашақ жобаларыңның сілтемелері мен сипаттамасын қосасың.</p>
+        <ol style="color:var(--muted);">
+          <li>Жоба 1 — қысқа сипаттама</li>
+          <li>Жоба 2 — қысқа сипаттама</li>
+        </ol>
+      </section>
+    </div>
+
+    <aside>
+      <div class="avatar-wrap">
+        <div class="avatar" role="img" aria-label="әдемі иллюстрация">
+          <!-- Decorative anime-ish SVG (non-photorealistic) -->
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="g1" x1="0" x2="1">
+                <stop offset="0" stop-color="#a866f9"/>
+                <stop offset="1" stop-color="#6b21a8"/>
+              </linearGradient>
+            </defs>
+            <rect width="200" height="200" rx="18" fill="url(#g1)"/>
+            <g transform="translate(30,28)" fill="#fff">
+              <ellipse cx="70" cy="70" rx="48" ry="56" fill="#fff" opacity="0.06"/>
+              <path d="M30 90 q40 40 80 0" stroke="#fff" stroke-opacity="0.18" stroke-width="6" fill="none"/>
+              <path d="M12 70 q20 -50 58 -48 q40 2 52 40 q-6 52 -56 56 q-46 -2 -54 -48z" fill="#fff" opacity="0.12"/>
+              <circle cx="46" cy="72" r="4" fill="#fff" />
+              <circle cx="94" cy="72" r="4" fill="#fff" />
+              <circle cx="130" cy="40" r="6" fill="#fff" opacity="0.16"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <div class="card contact-card" id="contact">
+        <h3>Байланыс</h3>
+        <p class="muted">Хабарласқың келсе, форма арқылы жаз немесе тікелей поштама жаз:</p>
+
+        <form id="contactForm" onsubmit="handleSend(event)">
+          <input id="iname" type="text" placeholder="Атың" required />
+          <input id="iemail" type="email" placeholder="Email" required />
+          <textarea id="imsg" placeholder="Хабарлама..." rows="4" required></textarea>
+          <button class="btn-send" type="submit">Жіберу</button>
+        </form>
+
+        <div style="text-align:center;margin-top:12px">
+          <a class="chip" href="mailto:samuzhan181105@icloud.com">samuzhan181105@icloud.com</a>
+        </div>
+
+        <div class="socials" style="margin-top:12px;display:flex;justify-content:center;gap:8px">
+          <a class="chip" href="https://instagram.com/sss.ayala" target="_blank" rel="noopener">@sss.ayala</a>
+        </div>
+      </div>
+    </aside>
+
+    <footer class="page-footer">
+      <div>© 2025 Ayala World</div>
+      <div class="muted">ALT университеті — 1 курс</div>
+    </footer>
+  </div>
+
+  <script>
+    function handleSend(e){
+      e.preventDefault();
+      const name = document.getElementById('iname').value.trim();
+      const email = document.getElementById('iemail').value.trim();
+      if(!name || !email){ alert('Атың мен email-ды толық жаз.'); return; }
+      alert('Хабарлама қабылданды. Рақмет, ' + name + '!');
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
